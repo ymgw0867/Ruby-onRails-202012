@@ -1,1 +1,1 @@
-{}
+{"1608874975":{"name":"hanako","mail":"hanako@sss.co.jp","msg":"おはようございます"},"1608875010":{"name":"taro","mail":"taro@sss.com","msg":"こんにちは"},"1608875089":{"name":"john","mail":"john@beatles.com","msg":"コロナに負けるな！"},"1608875389":{"name":"john","mail":"john@beatles.com","msg":"コロナに負けるな！"},"1608875399":{"name":"john","mail":"john@beatles.com","msg":"コロナに負けるな！"}}
