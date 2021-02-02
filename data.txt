@@ -1,1 +1,1 @@
-{"1608874975":{"name":"hanako","mail":"hanako@sss.co.jp","msg":"おはようございます"},"1608875010":{"name":"taro","mail":"taro@sss.com","msg":"こんにちは"},"1608875089":{"name":"john","mail":"john@beatles.com","msg":"コロナに負けるな！"},"1608875389":{"name":"john","mail":"john@beatles.com","msg":"コロナに負けるな！"},"1608875399":{"name":"john","mail":"john@beatles.com","msg":"コロナに負けるな！"}}
+{"1612246228":{"name":"ヤマギワケイイチ","mail":"alsjs","msg":"緊急事態宣言延長の見込み"},"1612246369":{"name":"速報　東京新たに556人感染","mail":"ksksks","msg":"減少傾向続く"}}
