@@ -17,10 +17,19 @@ class PeopleController < ApplicationController
   end
 
   def create
-    if request.post? then
-      Person.create(person_params)
+    # if request.post? then
+    #   Person.create(person_params)
+    # end
+    # redirect_to '/people'
+
+    @person = Person.new person_params
+    if @person.save then
+      redirect_to '/people'
+    else
+      #@msg = '入力に問題があります'
+      @msg = @person.errors.messages.to_s
+      render 'add'
     end
-    redirect_to '/people'
   end
 
   def edit
@@ -51,12 +60,21 @@ class PeopleController < ApplicationController
      #@people = Person.where "age>=?", params[:find]     
      #@people = Person.where "mail like ?", '%' + params[:find] + '%'
 
-     #f = params[:find].split ','
-     #@people = Person.where "age >= ? and age <= ?", f[0], f[1]
+     f = params[:find].split ','
+     #複数の条件、データの並び順を指定
+     #@people = Person.where('age >= ? and age <= ?', f[0], f[1]).order 'age asc'
+     @people = Person.all.offset(f[0]).limit(f[1]) #決まった位置から決まった数だけを取り出す
 
-    f = '%' + params[:find] + '%'
-    @people = Person.where "name like ? or mail Like ?", f, f
-    
+    #f = '%' + params[:find] + '%'
+    #OR演算子
+    #result = Person.where "name like ? or mail Like ?", f, f　#
+    #@people.push result.first
+    #@people.push result.last
+
+    #f = params[:find].split(',')
+    #@people = Person.find(f)
+   else
+     @people = Person.all
    end
   end
 
