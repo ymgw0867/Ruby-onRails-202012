@@ -10,7 +10,7 @@
         <td width="50%"><a href="/cards/<%= obj.id%>"><%= obj.title %></a></td>
         <td><%= obj.author %></td>
         <td width="80px"><a href="/cards/edit/<%= obj.id %>">編集</a></td>
-        <td width="80px"><a href="javascript:delData(<%= (obj.id.to_s + ",'".to_s + obj.title.to_s).html_safe %>');">削除</a></td>
+        <td width="80px"><a href="javascript:delData(<%= obj.id.to_s + ",'" + obj.title.to_s + "'" %>);">削除</a></td>
       </tr>
     <% end %>
 </table>
@@ -19,7 +19,7 @@
 
 <script>
 function delData(id, title) {
-    if (confirm('「'+ title + '」のデータを削除しますか？')) {
+    if (confirm('「'+ id + ' : ' + title + '」のデータを削除しますか？')) {
         document.location = "/cards/delete/" + id;        
     }
 }

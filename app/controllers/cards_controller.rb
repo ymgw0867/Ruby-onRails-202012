@@ -21,7 +21,7 @@ class CardsController < ApplicationController
   def edit
     @card = Card.find(params[:id])
     if request.patch? then
-      Card.update(card_params)
+      @card.update(card_params)
       goback
     end
   end
