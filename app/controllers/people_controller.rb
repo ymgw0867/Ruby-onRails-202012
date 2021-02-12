@@ -26,8 +26,6 @@ class PeopleController < ApplicationController
     if @person.save then
       redirect_to '/people'
     else
-      #@msg = '入力に問題があります'
-      @msg = @person.errors.messages.to_s
       render 'add'
     end
   end
