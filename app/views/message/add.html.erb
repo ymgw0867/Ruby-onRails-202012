@@ -1,0 +1,29 @@
+<h1 class="display-4 text-promary">Messages#add</h1>
+<p><%= @msg %></p>
+
+<% if @message.errors.any? %>
+<ul>
+  <% @message.errors.full_messages.each do |err| %>
+    <li><%= err %></li>
+  <% end %>
+</ul>
+<% end %>
+
+<%= form_for(@message, url:{controller:'message', action:"create"}) do |f| %>
+  <div class="form-group">
+     <%= f.label :personid %><br />
+     <%= f.text_field :person_id, class:"form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :title %><br />
+    <%= f.text_field :title, class:"form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :message %><br />
+    <%= f.text_area :message, {row:3, class:"form-control"} %>
+  </div>
+
+  <%= f.submit "作成" %>
+
+<% end %>
+

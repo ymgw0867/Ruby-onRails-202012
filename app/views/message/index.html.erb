@@ -1,0 +1,25 @@
+<h1 class = 'display-4 text-primary'>Message#index</h1>
+<p><%= @msg %></p>
+<table class="table">
+<tr>
+    <th>Id</th><th>title</th><th>person</th><th colspan = "2"></th>
+</tr>
+<% @data.each do |item| %>
+    <tr>
+    <td><%= item.id %></td>
+    <td><a href="/message/<%= item.id %>"><%= item.title %></a></td>
+    <td><%= item.person_id %></td>
+    <td><a href="/message/edit/<%= item.id %>">Edit</a></td>
+    <td><a href="javascript:delData(<%= item.id %>);">Deldata</a></td>
+    </tr>
+<% end %>
+</table>
+
+<script>
+function delData(nums) {
+    if (confirm('このデータを削除しますか？')) {
+        docment.location = "/message/delete/" + num;
+    }
+    return false;
+}
+</script>
